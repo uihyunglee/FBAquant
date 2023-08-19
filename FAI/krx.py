@@ -30,6 +30,7 @@ class WebSource:
         down_content = requests.post(down_url, headers=self.header, params=down_params).content
 
         df = pd.read_csv(BytesIO(down_content), encoding='EUC-KR')
+        time.sleep(self.freq)
         return df
 
 
@@ -124,7 +125,6 @@ class WebSource:
                 break
             
             sub_code += 1
-            time.sleep(self.freq)
         
         df = df[['일자', '시가', '고가', '저가', '종가', '거래량']]
         df.columns = ['date', 'adj_open', 'adj_high', 'adj_low', 'adj_close', 'volume']
