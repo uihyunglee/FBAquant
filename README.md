@@ -14,6 +14,7 @@ Introduction to Portfolio Construction and Analysis with Python - Coursera
 Advanced Portfolio Construction and Analysis with Python - Coursera  
 
 ## FAI (Financial AI)
+Ace The Data Science Interview - Kevin Huo, Nick Singh  
 Intermediate Python - Udacity  
 
 ## FE (Financial Engineering)
