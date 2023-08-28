@@ -29,5 +29,6 @@ Computational Methods in Pricing and Model Calibration - Coursera
 
 ## PM (Portfolio Management)
 Quantitative Portfolio Management in Python - Pierre Brugière  
+Investment Science - David G. Luenberger  
 
 Portfolio Selection - Harry Markowitz  
