@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+import re
 import requests
 from io import BytesIO
 
@@ -11,6 +12,7 @@ class WebSource:
     def __init__(self):
         self.freq = 0
         self.header = {"User-Agent": "Mozilla/5.0"}
+        self.codes = self.get_all_list_stocks()
         
     
     def set_freq(self, freq):
@@ -99,32 +101,33 @@ class WebSource:
             "url": "dbms/MDC/STAT/standard/MDCSTAT01901"
         }
         all_list_df = self.get_krx_content(otp_params)
-        all_stock_code = 'A' + all_list_df['단축코드']
-        all_stock_code = all_stock_code.values
-        return all_stock_code
+        all_list_df['단축코드'] = 'A' + all_list_df['단축코드']
+        all_list_df.set_index('단축코드', drop=True, inplace=True)
+        return all_list_df['표준코드']
     
     
     def get_ohlcv(self, stock_code, start, end):
         """start부터 end까지 기간 동안 stock_code의 OHLCV 반환"""
-        start = start.replace('-', '')
-        end = end.replace('-', '')
-        stock_code = stock_code.replace('A', '')
+        start = re.sub(r'[^0-9]', '', start)
+        end = re.sub(r'[^0-9]', '', end)
+        stock_code = self.codes.loc[stock_code]
         
-        sub_code = 0
-        while True:
+        df = pd.DataFrame()
+        while start < end:
+            temp_start_date = str(int(end) - 10000)
+            if temp_start_date < start:
+                temp_start_date = start
+
             otp_params = {
-                "isuCd": f"KR7{stock_code}{sub_code:03d}",
+                "isuCd": f"{stock_code}",
                 "strtDd": f"{start}",
                 "endDd": f"{end}",
                 "adjStkPrc_check": "Y",
                 "url": "dbms/MDC/STAT/standard/MDCSTAT01701"
             }
-            df = self.get_krx_content(otp_params)
-
-            if df.shape[0] > 0:
-                break
-            
-            sub_code += 1
+            temp_df = self.get_krx_content(otp_params)
+            df = pd.concat([df, temp_df], axis=0)
+            end = str(int(temp_start_date) - 1)
         
         df = df[['일자', '시가', '고가', '저가', '종가', '거래량']]
         df.columns = ['date', 'adj_open', 'adj_high', 'adj_low', 'adj_close', 'volume']
