@@ -131,7 +131,8 @@ class WebSource:
         
         df = df[['일자', '시가', '고가', '저가', '종가', '거래량']]
         df.columns = ['date', 'adj_open', 'adj_high', 'adj_low', 'adj_close', 'volume']
-        df = df.iloc[::-1,:].reset_index(drop=True)
+        df['date'] = pd.to_datetime(df['date'])
+        df.set_index('date', drop=True, inplace=True)
         return df
 
 
