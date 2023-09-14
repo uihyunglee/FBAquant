@@ -111,24 +111,16 @@ class WebSource:
         start = re.sub(r'[^0-9]', '', start)
         end = re.sub(r'[^0-9]', '', end)
         stock_code = self.codes.loc[stock_code]
-        
-        df = pd.DataFrame()
-        while start < end:
-            temp_start_date = str(int(end) - 10000)
-            if temp_start_date < start:
-                temp_start_date = start
 
-            otp_params = {
-                "isuCd": f"{stock_code}",
-                "strtDd": f"{start}",
-                "endDd": f"{end}",
-                "adjStkPrc_check": "Y",
-                "url": "dbms/MDC/STAT/standard/MDCSTAT01701"
-            }
-            temp_df = self.get_krx_content(otp_params)
-            df = pd.concat([df, temp_df], axis=0)
-            end = str(int(temp_start_date) - 1)
-        
+        otp_params = {
+            "isuCd": f"{stock_code}",
+            "strtDd": f"{start}",
+            "endDd": f"{end}",
+            "adjStkPrc_check": "Y",
+            "url": "dbms/MDC/STAT/standard/MDCSTAT01701"
+        }
+        df = self.get_krx_content(otp_params)
+
         df = df[['일자', '시가', '고가', '저가', '종가', '거래량']]
         df.columns = ['date', 'adj_open', 'adj_high', 'adj_low', 'adj_close', 'volume']
         df['date'] = pd.to_datetime(df['date'])
