@@ -133,7 +133,7 @@ class WebSource:
         df.columns = ['date', 'adj_open', 'adj_high', 'adj_low', 'adj_close', 'volume']
         df['date'] = pd.to_datetime(df['date'])
         df.set_index('date', drop=True, inplace=True)
-        return df
+        return df.iloc[::-1,:]
 
 
     def get_index_stocks_ohlcv(self, index_name, start, end):
