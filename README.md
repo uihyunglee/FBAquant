@@ -17,6 +17,9 @@ Advanced Portfolio Construction and Analysis with Python - Coursera
 Ace The Data Science Interview - Kevin Huo, Nick Singh  
 FRM Part 1 (CAPM & APT) - Schweser  
 
+Mean-Variance Optimization and the CAPM - Martin Haugh  
+When Diversification Fails - Sébastien Page & Robert A. Panariello
+
 Intermediate Python - Udacity  
 
 ## FE (Financial Engineering)
