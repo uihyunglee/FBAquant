@@ -16,6 +16,7 @@ Advanced Portfolio Construction and Analysis with Python - Coursera
 ## FAI (Financial AI)
 Ace The Data Science Interview - Kevin Huo, Nick Singh  
 FRM Part 1 (CAPM & APT) - Schweser  
+Efficiently Inefficient - Pedersen, Lasse Heje
 
 Mean-Variance Optimization and the CAPM - Martin Haugh  
 When Diversification Fails - Sébastien Page & Robert A. Panariello
