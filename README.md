@@ -19,9 +19,12 @@ FRM Part 1 (CAPM & APT) - Schweser
 Efficiently Inefficient - Pedersen, Lasse Heje
 
 Mean-Variance Optimization and the CAPM - Martin Haugh  
-When Diversification Fails - Sébastien Page & Robert A. Panariello
+When Diversification Fails - Sébastien Page, Robert A. Panariello  
+Can ChatGPT Forecast Stock Price Movements? - Alejandro Lopez-Lira, Yuehua Tang  
+Deep Learning for Portfolio Optimization - Zihao Zhang, Stefan Zohren, Stephen Roberts
 
 Intermediate Python - Udacity  
+Artificial Intelligence for Python - Udacity  
 
 ## FE (Financial Engineering)
 Investment Science - David G. Luenberger  
@@ -39,3 +42,5 @@ Investments - Bodie, Kane, Markus
 Investment Science - David G. Luenberger  
 
 Portfolio Selection - Harry Markowitz  
+Can ChatGPT Improve Investment Decision? From a portfolio management perspective - Hyungjin Ko, Jaewook Lee
+Machine Learning Portfolio Allocation - Michael Pinelis, David Ruppert
