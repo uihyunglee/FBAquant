@@ -43,4 +43,5 @@ Investment Science - David G. Luenberger
 
 Portfolio Selection - Harry Markowitz  
 Can ChatGPT Improve Investment Decision? From a portfolio management perspective - Hyungjin Ko, Jaewook Lee
-Machine Learning Portfolio Allocation - Michael Pinelis, David Ruppert
+Machine Learning Portfolio Allocation - Michael Pinelis, David Ruppert  
+A STEP-BY-STEP GUIDE TO THE BLACK-LITTERMAN MODEL - Thomas M. Idzorek
