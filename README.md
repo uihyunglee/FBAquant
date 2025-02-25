@@ -42,6 +42,11 @@ Investments - Bodie, Kane, Markus
 Investment Science - David G. Luenberger  
 
 Portfolio Selection - Harry Markowitz  
-Can ChatGPT Improve Investment Decision? From a portfolio management perspective - Hyungjin Ko, Jaewook Lee
+Can ChatGPT Improve Investment Decision? From a portfolio management perspective - Hyungjin Ko, Jaewook Lee  
 Machine Learning Portfolio Allocation - Michael Pinelis, David Ruppert  
 A STEP-BY-STEP GUIDE TO THE BLACK-LITTERMAN MODEL - Thomas M. Idzorek
+
+## MM (Market Microstructure)
+Market liquidity: theory, evidence, and policy - Ailsa Roëll, Marco Pagano, Thierry Foucault  
+
+Financial Market Microstructure - Coursera  
